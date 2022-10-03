@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["Comment.nvim"] = {
+    loaded = true,
+    path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/Comment.nvim",
+    url = "https://github.com/numToStr/Comment.nvim"
+  },
   LuaSnip = {
     loaded = true,
     path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -103,6 +108,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
+  },
+  everblush = {
+    loaded = true,
+    path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/everblush",
+    url = "https://github.com/Everblush/everblush.nvim"
   },
   ["gitsigns.nvim"] = {
     loaded = true,
@@ -184,6 +194,11 @@ _G.packer_plugins = {
     path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
     url = "https://github.com/windwp/nvim-ts-autotag"
   },
+  ["nvim-ts-context-commentstring"] = {
+    loaded = true,
+    path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring",
+    url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -198,6 +213,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["poimandres.nvim"] = {
+    loaded = true,
+    path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/poimandres.nvim",
+    url = "https://github.com/olivercederborg/poimandres.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
