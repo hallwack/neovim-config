@@ -54,6 +54,9 @@ return packer.startup(function(use)
 	})
 
 	use("Yazeed1s/minimal.nvim")
+	use({ "Everblush/everblush.nvim", as = "everblush" })
+	use("olivercederborg/poimandres.nvim")
+
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
 	use("jose-elias-alvarez/null-ls.nvim")
@@ -69,6 +72,8 @@ return packer.startup(function(use)
 	use({ "glepnir/lspsaga.nvim", branch = "main" })
 	use("windwp/nvim-autopairs")
 	use("windwp/nvim-ts-autotag")
+	use("numToStr/Comment.nvim")
+	use("JoosepAlviste/nvim-ts-context-commentstring")
 
 	use({
 		"kyazdani42/nvim-tree.lua",
