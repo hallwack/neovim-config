@@ -1,6 +1,6 @@
--- vim.cmd[[ colorscheme minimal ]]
+--vim.cmd[[ colorscheme minimal ]]
 
---[[local status, everblush = pcall(require, "everblush")
+--[[ local status, everblush = pcall(require, "everblush")
 if not status then
 	return
 end
@@ -8,14 +8,14 @@ end
 local colors = require("everblush.core").get_colors()
 
 everblush.setup({
-	nvim_tree = { contrast = true },
+	nvim_tree = { contrast = false },
 	-- transparent_background = true,
 	override = {
 		LineNr = {
 			fg = colors.color12,
 		},
 	},
-}) -- or use contrast = false to not apply contrast]]--
+}) -- or use contrast = false to not apply contrast ]]
 
 vim.cmd[[ colorscheme poimandres ]]
 
