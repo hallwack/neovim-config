@@ -79,10 +79,10 @@ telescope.setup({
 	},
 	pickers = {
 		find_files = {
-			theme = "cursor",
+			theme = "dropdown",
 		},
 		live_grep = {
-			theme = "cursor",
+			theme = "dropdown",
 		},
 		-- Default configuration for builtin pickers goes here:
 		-- picker_name = {
