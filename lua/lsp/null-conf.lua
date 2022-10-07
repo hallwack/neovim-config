@@ -8,6 +8,7 @@ null_ls.setup({
 		null_ls.builtins.formatting.stylua,
 		null_ls.builtins.formatting.prettierd,
 		null_ls.builtins.formatting.blade_formatter,
+		null_ls.builtins.formatting.black,
 		null_ls.builtins.code_actions.eslint_d,
 	},
 })
