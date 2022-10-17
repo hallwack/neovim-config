@@ -56,6 +56,7 @@ return packer.startup(function(use)
 	use("Yazeed1s/minimal.nvim")
 	use({ "Everblush/everblush.nvim", as = "everblush" })
 	use("olivercederborg/poimandres.nvim")
+  use "rebelot/kanagawa.nvim"
 
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
@@ -98,6 +99,8 @@ return packer.startup(function(use)
 			require("alpha").setup(require("alpha.themes.startify").config)
 		end,
 	})
+
+	use("kdheepak/lazygit.nvim")
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
