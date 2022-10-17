@@ -1,11 +1,12 @@
+vim.cmd [[ colorscheme kanagawa ]]
 --vim.cmd[[ colorscheme minimal ]]
 
---[[ local status, everblush = pcall(require, "everblush")
+--[[local status, everblush = pcall(require, "everblush")
 if not status then
 	return
 end
 
-local colors = require("everblush.core").get_colors()
+--[[local colors = require("everblush.core").get_colors()
 
 everblush.setup({
 	nvim_tree = { contrast = false },
@@ -15,13 +16,13 @@ everblush.setup({
 			fg = colors.color12,
 		},
 	},
-}) -- or use contrast = false to not apply contrast ]]
+}) -- or use contrast = false to not apply contrast]]
 
-vim.cmd[[ colorscheme poimandres ]]
+--vim.cmd[[ colorscheme poimandres]]
 
-local status, poimandres = pcall(require, "poimandres")
+--[[local status, poimandres = pcall(require, "poimandres")
 if not status then
 	return
 end
 
-poimandres.setup {}
+poimandres.setup {}]]
