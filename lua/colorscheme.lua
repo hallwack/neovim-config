@@ -1,4 +1,4 @@
-vim.cmd [[ colorscheme kanagawa ]]
+--[[ vim.cmd [[ colorscheme kanagawa ]]
 --vim.cmd[[ colorscheme minimal ]]
 
 --[[local status, everblush = pcall(require, "everblush")
@@ -18,11 +18,11 @@ everblush.setup({
 	},
 }) -- or use contrast = false to not apply contrast]]
 
---vim.cmd[[ colorscheme poimandres]]
+vim.cmd[[ colorscheme poimandres]]
 
---[[local status, poimandres = pcall(require, "poimandres")
+local status, poimandres = pcall(require, "poimandres")
 if not status then
 	return
 end
 
-poimandres.setup {}]]
+poimandres.setup {}
