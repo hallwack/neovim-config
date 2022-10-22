@@ -90,11 +90,6 @@ _G.packer_plugins = {
     path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/alpha-nvim",
     url = "https://github.com/goolord/alpha-nvim"
   },
-  catppuccin = {
-    loaded = true,
-    path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/catppuccin",
-    url = "https://github.com/catppuccin/nvim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/cmp-buffer",
