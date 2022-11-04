@@ -69,12 +69,18 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-nvim-lsp")
 	use("saadparwaiz1/cmp_luasnip")
 	use("L3MON4D3/LuaSnip")
+	use("rafamadriz/friendly-snippets")
 	use("onsails/lspkind-nvim")
 	use({ "glepnir/lspsaga.nvim", branch = "main" })
 	use("windwp/nvim-autopairs")
 	use("windwp/nvim-ts-autotag")
 	use("numToStr/Comment.nvim")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
+
+	use({
+		"dsznajder/vscode-es7-javascript-react-snippets",
+		run = "yarn install --frozen-lockfile && yarn compile",
+	})
 
 	use({
 		"kyazdani42/nvim-tree.lua",
