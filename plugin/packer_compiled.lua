@@ -90,6 +90,11 @@ _G.packer_plugins = {
     path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/alpha-nvim",
     url = "https://github.com/goolord/alpha-nvim"
   },
+  catppuccin = {
+    loaded = true,
+    path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/catppuccin",
+    url = "https://github.com/catppuccin/nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -175,6 +180,11 @@ _G.packer_plugins = {
     path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["mellow.nvim"] = {
+    loaded = true,
+    path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/mellow.nvim",
+    url = "https://github.com/kvrohit/mellow.nvim"
+  },
   ["minimal.nvim"] = {
     loaded = true,
     path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/minimal.nvim",
@@ -225,6 +235,21 @@ _G.packer_plugins = {
     path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
+  ["oh-lucy.nvim"] = {
+    loaded = true,
+    path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/oh-lucy.nvim",
+    url = "https://github.com/Yazeed1s/oh-lucy.nvim"
+  },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    url = "https://github.com/navarasu/onedark.nvim"
+  },
+  ["onenord.nvim"] = {
+    loaded = true,
+    path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/onenord.nvim",
+    url = "https://github.com/rmehri01/onenord.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -254,6 +279,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/vscode-es7-javascript-react-snippets",
     url = "https://github.com/dsznajder/vscode-es7-javascript-react-snippets"
+  },
+  ["vscode.nvim"] = {
+    loaded = true,
+    path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/vscode.nvim",
+    url = "https://github.com/Mofiqul/vscode.nvim"
   }
 }
 
