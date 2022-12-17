@@ -7,20 +7,22 @@
 
 --vim.cmd[[ colorscheme minimal ]]
 
---[[local status, everblush = pcall(require, "everblush")
+local status, everblush = pcall(require, "everblush")
 if not status then
 	return
 end
 
---[[local colors = require("everblush.core").get_colors()
+local colors = require("everblush.core").get_colors()
 
 everblush.setup({
 	nvim_tree = { contrast = false },
-	-- transparent_background = true,
+	transparent_background = true,
 	override = {
 		LineNr = {
 			fg = colors.color12,
 		},
+    Comment = { fg = colors.comment, italic = false },
+    ["@comment"] = { fg = colors.comment, italic = false },
 	},
 }) -- or use contrast = false to not apply contrast]]
 
@@ -83,7 +85,7 @@ vim.cmd [[colorscheme mellow]]
 })
 require("onedark").load() ]]
 
-vim.o.background = 'dark'
+--[[ vim.o.background = 'dark'
 local c = require('vscode.colors')
 require('vscode').setup({
     -- Enable transparent background
@@ -106,6 +108,6 @@ require('vscode').setup({
         -- use colors from this colorscheme by requiring vscode.colors!
         Cursor = { fg=c.vscDarkBlue, bg=c.vscLightGreen, bold=true },
     }
-})
+}) ]]
 
 --[[ require('onenord').setup() ]]
