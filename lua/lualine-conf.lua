@@ -3,16 +3,18 @@ if not status then
 	return
 end
 
+local colors = require('everblush.core').get_colors()
+
 lualine.setup({
 	options = {
 		icons_enabled = true,
 		theme = "auto",
 		component_separators = { left = "", right = "" },
-		section_separators = { left = "", right = "" },
+		section_separators = { left = "", right = "" },
 		disabled_filetypes = { "alpha", "NvimTree", "Outline" },
 	},
 	sections = {
-		lualine_a = { "mode" },
+		lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },
 		lualine_b = { "branch" },
 		lualine_c = {
 			{
@@ -27,10 +29,30 @@ lualine.setup({
 				sources = { "nvim_diagnostic" },
 				symbols = { error = " ", warn = " ", info = " ", hint = " " },
 			},
+			{
+				-- Lsp server name .
+				function()
+					local msg = "No Active Lsp"
+					local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
+					local clients = vim.lsp.get_active_clients()
+					if next(clients) == nil then
+						return msg
+					end
+					for _, client in ipairs(clients) do
+						local filetypes = client.config.filetypes
+						if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+							return client.name
+						end
+					end
+					return msg
+				end,
+				icon = " LSP:",
+				color = { fg = colors.color2, gui = "bold" },
+			},
 			"filetype",
 		},
 		lualine_y = { "progress" },
-		lualine_z = { "location" },
+		lualine_z = { { "location", separator = { right = "" }, left_padding = 2 } },
 	},
 	inactive_sections = {
 		lualine_a = {},
