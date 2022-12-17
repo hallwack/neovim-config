@@ -25,7 +25,8 @@ local on_attach = function(client, bufnr)
 
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  --buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n', 'gr', '<Cmd>lua vim.lsp.buf.references()<CR>', opts)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   buf_set_keymap('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
   buf_set_keymap('n', '<leader>fr', '<Cmd>lua vim.lsp.buf.format({ async = true })<CR>', opts)
@@ -78,7 +79,7 @@ end
   capabilities = capabilities,
   filetype = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
   cmd = { "typescript-language-server", "--stdio" },
-}
+} ]]
 
 nvim_lsp.sumneko_lua.setup {
   on_attach = on_attach,
@@ -97,7 +98,7 @@ nvim_lsp.sumneko_lua.setup {
 	},
 }
 
-nvim_lsp.tailwindcss.setup {} ]]--
+--[[ nvim_lsp.tailwindcss.setup {} ]]
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
