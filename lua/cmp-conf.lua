@@ -107,6 +107,7 @@ cmp.setup({
 		{ name = "luasnip" }, -- For luasnip users.
 	}, {
 		{ name = "buffer" },
+		{ name = "path" },
 	}),
 	formatting = {
 		format = lspkind.cmp_format({ with_text = true, maxwidth = 50 }),
