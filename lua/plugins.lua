@@ -47,6 +47,7 @@ return packer.startup(function(use)
 	use("neovim/nvim-lspconfig") -- Configurations for Nvim LSP
 	use("nvim-lua/lsp-status.nvim")
 	use("kyazdani42/nvim-web-devicons")
+	use("smiteshp/nvim-navic")
 
 	use({
 		"nvim-lualine/lualine.nvim",
