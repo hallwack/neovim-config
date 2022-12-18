@@ -210,6 +210,11 @@ _G.packer_plugins = {
     path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-navic"] = {
+    loaded = true,
+    path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/nvim-navic",
+    url = "https://github.com/smiteshp/nvim-navic"
+  },
   ["nvim-notify"] = {
     loaded = true,
     path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/nvim-notify",
