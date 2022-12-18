@@ -1,7 +1,7 @@
 local status, lspstatus = pcall(require, 'lsp-status')
 if (not status) then return end
 
-lsp_status.config {
+lspstatus.config {
   select_symbol = function(cursor_pos, symbol)
     if symbol.valueRange then
       local value_range = {
