@@ -3,6 +3,11 @@ if not status then
 	return
 end
 
+local navic_status, navic = pcall(require, "nvim-navic")
+if not navic_status then
+	return
+end
+
 local colors = require("everblush.core").get_colors()
 
 lualine.setup({
@@ -14,19 +19,30 @@ lualine.setup({
 		disabled_filetypes = { "alpha", "NvimTree", "Outline" },
 	},
 	sections = {
-		lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },
-		lualine_b = { "branch" },
-		lualine_c = {
+		lualine_a = { { "mode", separator = { left = "", right = "" }, right_padding = 2 } },
+		lualine_b = {
 			{
 				"filename",
 				file_status = true, -- displays file status (readonly status, modified status)
 				path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path
 			},
 		},
+		lualine_c = {
+			{
+				"fileformat",
+				symbols = {
+					unix = "", -- e712
+					dos = "", -- e70f
+					mac = "", -- e711
+				},
+			},
+		},
 		lualine_x = {
 			{
 				"diagnostics",
 				sources = { "nvim_diagnostic" },
+				colored = true, -- Displays diagnostics status in color if set to true.
+				update_in_insert = true, -- Update diagnostics in insert mode.
 				symbols = { error = " ", warn = " ", info = " ", hint = " " },
 			},
 			{
@@ -54,12 +70,12 @@ lualine.setup({
 					end
 				end,
 				icon = " LSP:",
-				color = { fg = colors.color6, gui = "bold" },
+				color = { fg = colors.color1, gui = "bold" },
 			},
-			"filetype",
+			{ "filetype", colored = true },
 		},
 		lualine_y = { "progress" },
-		lualine_z = { { "location", separator = { right = "" }, left_padding = 2 } },
+		lualine_z = { { "location", separator = { left = "", right = "" }, left_padding = 0 } },
 	},
 	inactive_sections = {
 		lualine_a = {},
@@ -76,4 +92,15 @@ lualine.setup({
 		lualine_z = {},
 	},
 	tabline = {},
+	winbar = {
+		lualine_a = {
+			{
+				navic.get_location,
+				cond = navic.is_available,
+				separator = { left = "", right = "" },
+				right_padding = 2,
+			},
+		},
+		lualine_z = { { "branch", separator = { left = "", right = "" }, right_padding = 2 } },
+	},
 })
