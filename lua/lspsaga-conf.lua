@@ -18,10 +18,10 @@ lspsaga.init_lsp_saga({
     quit = "q",
     exec = "<CR>",
   },
-  symbol_in_winbar = {
+  --[[ symbol_in_winbar = {
     enable = true,
     separator = '  ',
-  },
+  }, ]]
   border_style = "rounded",
   server_filetype_map = {},
 })
