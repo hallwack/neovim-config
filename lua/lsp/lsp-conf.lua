@@ -23,36 +23,41 @@ if not status_navic then
 	return
 end
 
-navic.setup {
-  icons = {
-    File = ' ',
-    Module = ' ',
-    Namespace = ' ',
-    Package = ' ',
-    Class = ' ',
-    Method = ' ',
-    Property = ' ',
-    Field = ' ',
-    Constructor = ' ',
-    Enum = ' ',
-    Interface = ' ',
-    Function = ' ',
-    Variable = ' ',
-    Constant = ' ',
-    String = ' ',
-    Number = ' ',
-    Boolean = ' ',
-    Array = ' ',
-    Object = ' ',
-    Key = ' ',
-    Null = ' ',
-    EnumMember = ' ',
-    Struct = ' ',
-    Event = ' ',
-    Operator = ' ',
-    TypeParameter = ' '
-  }
-}
+local status_rt, rt = pcall(require, "rust-tools")
+if not status_rt then
+	return
+end
+
+navic.setup({
+	icons = {
+		File = " ",
+		Module = " ",
+		Namespace = " ",
+		Package = " ",
+		Class = " ",
+		Method = " ",
+		Property = " ",
+		Field = " ",
+		Constructor = " ",
+		Enum = " ",
+		Interface = " ",
+		Function = " ",
+		Variable = " ",
+		Constant = " ",
+		String = " ",
+		Number = " ",
+		Boolean = " ",
+		Array = " ",
+		Object = " ",
+		Key = " ",
+		Null = " ",
+		EnumMember = " ",
+		Struct = " ",
+		Event = " ",
+		Operator = " ",
+		TypeParameter = " ",
+	},
+})
 
 local protocol = require("vim.lsp.protocol")
 
@@ -121,8 +126,82 @@ for _, server in ipairs(servers) do
 		server = server,
 		on_attach = on_attach,
 		capabilities = capabilities,
+		settings = {
+			Lua = {
+				diagnostics = {
+					globals = { "vim" },
+				},
+				workspace = {
+					library = {
+						[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+						[vim.fn.stdpath("config") .. "/lua"] = true,
+					},
+				},
+			},
+			["rust-analyzer"] = {
+				imports = {
+					granularity = {
+						group = "module",
+					},
+					prefix = "self",
+				},
+				cargo = {
+					buildScripts = {
+						enable = true,
+					},
+				},
+				procMacro = {
+					enable = true,
+				},
+				inlayHints = {
+					lifetimeElisionHints = {
+						enable = true,
+						useParameterNames = true,
+					},
+				},
+			},
+		},
 	})
 end
+
+--[[ rt.setup({
+	tools = {
+		autoSetHints = true,
+		hover_with_actions = true,
+		inlay_hints = {
+			only_current_line = true,
+			show_parameter_hints = true,
+			parameter_hints_prefix = "",
+			other_hints_prefix = "",
+		},
+	},
+	server = {
+		settings = {
+			["rust-analyzer"] = {
+				imports = {
+					granularity = {
+						group = "module",
+					},
+					prefix = "self",
+				},
+				cargo = {
+					buildScripts = {
+						enable = true,
+					},
+				},
+				procMacro = {
+					enable = true,
+				},
+				inlayHints = {
+					lifetimeElisionHints = {
+						enable = true,
+						useParameterNames = true,
+					},
+				},
+			},
+		},
+	},
+}) ]]
 
 --[[ nvim_lsp.tsserver.setup {
   on_attach = on_attach,
@@ -131,7 +210,30 @@ end
   cmd = { "typescript-language-server", "--stdio" },
 } ]]
 
-nvim_lsp.sumneko_lua.setup({
+--[[ nvim_lsp.rust_analyzer.setup({
+	-- on_attach is a callback called when the language server attachs to the buffer
+	on_attach = on_attach,
+	settings = {
+		["rust-analyzer"] = {
+			imports = {
+				granularity = {
+					group = "module",
+				},
+				prefix = "self",
+			},
+			cargo = {
+				buildScripts = {
+					enable = true,
+				},
+			},
+			procMacro = {
+				enable = true,
+			},
+		},
+	},
+}) ]]
+
+--[[ nvim_lsp.sumneko_lua.setup({
 	on_attach = on_attach,
 	settings = {
 		Lua = {
@@ -146,7 +248,7 @@ nvim_lsp.sumneko_lua.setup({
 			},
 		},
 	},
-})
+}) ]]
 
 --[[ nvim_lsp.tailwindcss.setup {} ]]
 
