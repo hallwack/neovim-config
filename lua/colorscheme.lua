@@ -24,7 +24,8 @@ everblush.setup({
     Comment = { fg = colors.comment, italic = false },
     ["@comment"] = { fg = colors.comment, italic = false },
 	},
-}) -- or use contrast = false to not apply contrast]]
+}) 
+-- or use contrast = false to not apply contrast]]
 
 --[[ vim.cmd[[ colorscheme poimandres]]
 
@@ -111,3 +112,26 @@ require('vscode').setup({
 }) ]]
 
 --[[ require('onenord').setup() ]]
+
+---- setup must be called before loading the colorscheme
+-- Default options:
+--[[ require("gruvbox").setup({
+	undercurl = true,
+	underline = true,
+	bold = true,
+	italic = false,
+	strikethrough = true,
+	invert_selection = false,
+	invert_signs = false,
+	invert_tabline = false,
+	invert_intend_guides = false,
+	inverse = true, -- invert background for search, diffs, statuslines and errors
+	contrast = "", -- can be "hard", "soft" or empty string
+	palette_overrides = {},
+	overrides = {},
+	dim_inactive = false,
+	transparent_mode = true,
+})
+vim.cmd("colorscheme gruvbox") ]]
+
+--[[ vim.cmd("colorscheme github-colors") ]]
