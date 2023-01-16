@@ -3,7 +3,7 @@ if (not status) then return end
 
 local keymap = vim.keymap.set
 
-lspsaga.init_lsp_saga({
+lspsaga.setup({
   code_action_icon = " ",
   max_preview_lines = 10,
   finder_action_keys = {
