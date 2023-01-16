@@ -65,6 +65,8 @@ return packer.startup(function(use)
 	use("navarasu/onedark.nvim")
 	use("Mofiqul/vscode.nvim")
 	use("rmehri01/onenord.nvim")
+	use({ "ellisonleao/gruvbox.nvim" })
+	use("lourenci/github-colors")
 
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")

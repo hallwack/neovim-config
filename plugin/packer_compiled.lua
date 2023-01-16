@@ -130,10 +130,20 @@ _G.packer_plugins = {
     path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["github-colors"] = {
+    loaded = true,
+    path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/github-colors",
+    url = "https://github.com/lourenci/github-colors"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
+  ["gruvbox.nvim"] = {
+    loaded = true,
+    path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
+    url = "https://github.com/ellisonleao/gruvbox.nvim"
   },
   ["kanagawa.nvim"] = {
     loaded = true,
