@@ -1,29 +1,47 @@
-local status, lspsaga = pcall(require, 'lspsaga')
-if (not status) then return end
+local status, lspsaga = pcall(require, "lspsaga")
+if not status then
+	return
+end
 
 local keymap = vim.keymap.set
 
 lspsaga.setup({
-  code_action_icon = " ",
-  max_preview_lines = 10,
-  finder_action_keys = {
-    open = "o",
-    vsplit = "s",
-    split = "i",
-    quit = "q",
-    scroll_down = "<C-f>",
-    scroll_up = "<C-b>",
-  },
-  code_action_keys = {
-    quit = "q",
-    exec = "<CR>",
-  },
-  --[[ symbol_in_winbar = {
+	ui = {
+		theme = "round",
+		border = "rounded",
+		code_action = " ",
+		colors = {
+			normal_bg = "#000000",
+		},
+	},
+	preview = {
+		lines_above = 0,
+		lines_below = 10,
+	},
+	scroll_preview = {
+		scroll_down = "<C-f>",
+		scroll_up = "<C-b>",
+	},
+	finder = {
+		edit = { "o", "<CR>" },
+		vsplit = "s",
+		split = "i",
+		tabe = "t",
+		quit = { "q", "<ESC>" },
+	},
+	code_action = {
+		num_shortcut = true,
+		keys = {
+			-- string |table type
+			quit = "q",
+			exec = "<CR>",
+		},
+	},
+	--[[ symbol_in_winbar = {
     enable = true,
     separator = '  ',
   }, ]]
-  border_style = "rounded",
-  server_filetype_map = {},
+	--[[ server_filetype_map = {}, ]]
 })
 keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
 
@@ -51,10 +69,10 @@ keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
 
 -- Only jump to error
 keymap("n", "[E", function()
-  require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR })
+	require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR })
 end, { silent = true })
 keymap("n", "]E", function()
-  require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
+	require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
 end, { silent = true })
 
 -- Outline
