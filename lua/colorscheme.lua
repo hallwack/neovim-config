@@ -23,8 +23,9 @@ everblush.setup({
 		},
     Comment = { fg = colors.comment, italic = false },
     ["@comment"] = { fg = colors.comment, italic = false },
+    ["@text.literal"] = { fg = colors.color2, italic = false },
 	},
-}) 
+})
 -- or use contrast = false to not apply contrast]]
 
 --[[ vim.cmd[[ colorscheme poimandres]]
