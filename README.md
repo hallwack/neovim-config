@@ -2,7 +2,7 @@
 
 ## Instalasi
 
-- Install dulu Neovim nya, kalo pake Vim mana bisa orang ga punya compiler lua. Kalo bisa install Neovim yang versi terakhir (disini pake Neovim versi 0.8).
+- Install dulu Neovim nya. Kalo bisa install Neovim yang versi terakhir (disini pake Neovim versi 0.8). Downloadnya [disini](https://github.com/neovim/neovim/wiki/Installing-Neovim) ya bang.
 - Abis itu install [Packer](https://github.com/wbthomason/packer.nvim) buat package manager Neovim nya.
 - Terus clone deh ni repo. Nanti clone nya di direktori `~/.config/nvim` ya bang. Kalo blm ada direktorinya, bikin sendiri bang. Bisa kan bikinnya?
 - Terus ketik `:PackerInstall` buat install package nya.
