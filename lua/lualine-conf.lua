@@ -8,12 +8,10 @@ if not navic_status then
 	return
 end
 
-local colors = require("everblush.core").get_colors()
-
 lualine.setup({
 	options = {
 		icons_enabled = true,
-		theme = "auto",
+		theme = "everblush",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = { "alpha", "NvimTree", "Outline" },
@@ -70,7 +68,7 @@ lualine.setup({
 					end
 				end,
 				icon = " LSP:",
-				color = { fg = colors.color1, gui = "bold" },
+				color = { fg = '#e57474', gui = "bold" },
 			},
 			{ "filetype", colored = true },
 		},
