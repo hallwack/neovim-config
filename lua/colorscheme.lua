@@ -12,20 +12,20 @@ if not status then
 	return
 end
 
-local colors = require("everblush.core").get_colors()
-
 everblush.setup({
 	nvim_tree = { contrast = false },
 	transparent_background = true,
 	override = {
 		LineNr = {
-			fg = colors.color12,
+			fg = '#71baf2',
 		},
-    Comment = { fg = colors.comment, italic = false },
-    ["@comment"] = { fg = colors.comment, italic = false },
-    ["@text.literal"] = { fg = colors.color2, italic = false },
+    Comment = { fg = '#404749', italic = false },
+    ["@comment"] = { fg = '#404749', italic = false },
+    ["@text.literal"] = { fg = '#8ccf7e', italic = false },
 	},
 })
+
+vim.cmd('colorscheme everblush')
 -- or use contrast = false to not apply contrast]]
 
 --[[ vim.cmd[[ colorscheme poimandres]]
