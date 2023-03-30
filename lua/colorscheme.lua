@@ -7,7 +7,7 @@
 
 --vim.cmd[[ colorscheme minimal ]]
 
-local status, everblush = pcall(require, "everblush")
+--[[ local status, everblush = pcall(require, "everblush")
 if not status then
 	return
 end
@@ -25,7 +25,7 @@ everblush.setup({
 	},
 })
 
-vim.cmd('colorscheme everblush')
+vim.cmd('colorscheme everblush') ]]
 -- or use contrast = false to not apply contrast]]
 
 --[[ vim.cmd[[ colorscheme poimandres]]
@@ -136,3 +136,5 @@ require('vscode').setup({
 vim.cmd("colorscheme gruvbox") ]]
 
 --[[ vim.cmd("colorscheme github-colors") ]]
+
+vim.cmd("colorscheme arctic")
