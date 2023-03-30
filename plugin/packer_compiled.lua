@@ -90,6 +90,11 @@ _G.packer_plugins = {
     path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/alpha-nvim",
     url = "https://github.com/goolord/alpha-nvim"
   },
+  ["arctic.nvim"] = {
+    loaded = true,
+    path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/arctic.nvim",
+    url = "https://github.com/rockyzhang24/arctic.nvim"
+  },
   catppuccin = {
     loaded = true,
     path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/catppuccin",
@@ -179,6 +184,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/luatab.nvim",
     url = "https://github.com/alvarosevilla95/luatab.nvim"
+  },
+  ["lush.nvim"] = {
+    loaded = true,
+    path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/lush.nvim",
+    url = "https://github.com/rktjmp/lush.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
