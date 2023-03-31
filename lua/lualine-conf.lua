@@ -68,7 +68,7 @@ lualine.setup({
 					end
 				end,
 				icon = " LSP:",
-				color = { fg = '#e57474', gui = "bold" },
+				color = { fg = "#e57474", gui = "bold" },
 			},
 			{ "filetype", colored = true },
 		},
@@ -93,7 +93,9 @@ lualine.setup({
 	winbar = {
 		lualine_a = {
 			{
-				navic.get_location,
+				function()
+					return navic.get_location()
+				end,
 				cond = navic.is_available,
 				separator = { left = "", right = "" },
 				right_padding = 2,
