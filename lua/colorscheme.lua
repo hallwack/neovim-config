@@ -7,8 +7,8 @@
 
 --vim.cmd[[ colorscheme minimal ]]
 
---[[ local status, everblush = pcall(require, "everblush")
-if not status then
+--[[ if not status then
+  local status, everblush = pcall(require, "everblush")
 	return
 end
 
@@ -40,7 +40,7 @@ poimandres.setup {} ]]
 --[[ vim.g.mellow_italic_comments=false
 vim.cmd [[colorscheme mellow]]
 
---[[ vim.cmd [[colorscheme oh-lucy]]
+--vim.cmd [[colorscheme oh-lucy]]
 
 --[[ require("catppuccin").setup({
 	flavour = "mocha", -- latte, frappe, macchiato, mocha
@@ -87,7 +87,7 @@ vim.cmd [[colorscheme mellow]]
 })
 require("onedark").load() ]]
 
---[[ vim.o.background = 'dark'
+vim.o.background = 'dark'
 local c = require('vscode.colors')
 require('vscode').setup({
     -- Enable transparent background
@@ -101,7 +101,10 @@ require('vscode').setup({
 
     -- Override colors (see ./lua/vscode/colors.lua)
     color_overrides = {
-        vscLineNumber = '#FFFFFF',
+        vscLineNumber = '#5a5a5a',
+        vscBack = "#0F1117",
+        vscCursorDarkDark = "#161B23",
+        vscTabOutside = "NONE",
     },
 
     -- Override highlight groups (see ./lua/vscode/theme.lua)
@@ -110,7 +113,8 @@ require('vscode').setup({
         -- use colors from this colorscheme by requiring vscode.colors!
         Cursor = { fg=c.vscDarkBlue, bg=c.vscLightGreen, bold=true },
     }
-}) ]]
+})
+vim.cmd("colorscheme vscode")
 
 --[[ require('onenord').setup() ]]
 
@@ -137,4 +141,6 @@ vim.cmd("colorscheme gruvbox") ]]
 
 --[[ vim.cmd("colorscheme github-colors") ]]
 
-vim.cmd("colorscheme arctic")
+--[[ vim.cmd("colorscheme arctic") ]]
+
+--[[ vim.cmd("colorscheme bloop") ]]
