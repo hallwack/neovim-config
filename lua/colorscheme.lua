@@ -91,7 +91,7 @@ vim.o.background = 'dark'
 local c = require('vscode.colors')
 require('vscode').setup({
     -- Enable transparent background
-    transparent = false,
+    transparent = true,
 
     -- Enable italic comment
     italic_comments = false,
