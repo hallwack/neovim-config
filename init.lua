@@ -15,4 +15,4 @@ require("luatab-conf")
 require("comment")
 require("discord")
 require("treesitter")
-require("notification")
+--[[ require("notification") ]]

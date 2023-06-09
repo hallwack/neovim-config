@@ -235,6 +235,11 @@ _G.packer_plugins = {
     path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/minimal.nvim",
     url = "https://github.com/Yazeed1s/minimal.nvim"
   },
+  ["neodev.nvim"] = {
+    loaded = true,
+    path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/neodev.nvim",
+    url = "https://github.com/folke/neodev.nvim"
+  },
   ["noctis.nvim"] = {
     loaded = true,
     path = "/home/hallwack/.local/share/nvim/site/pack/packer/start/noctis.nvim",

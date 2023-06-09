@@ -127,6 +127,30 @@ for _, server in ipairs(servers) do
 		on_attach = on_attach,
 		capabilities = capabilities,
 	})
+	if nvim_lsp == "rust_analyzer" then
+		nvim_lsp.rust_analyzer.setup({
+			-- on_attach is a callback called when the language server attachs to the buffer
+			on_attach = on_attach,
+			settings = {
+				["rust-analyzer"] = {
+					imports = {
+						granularity = {
+							group = "module",
+						},
+						prefix = "self",
+					},
+					cargo = {
+						buildScripts = {
+							enable = true,
+						},
+					},
+					procMacro = {
+						enable = true,
+					},
+				},
+			},
+		})
+	end
 end
 
 --[[ nvim_lsp.tsserver.setup {
@@ -135,7 +159,6 @@ end
   filetype = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
   cmd = { "typescript-language-server", "--stdio" },
 } ]]
-
 --[[ nvim_lsp.rust_analyzer.setup({
 	-- on_attach is a callback called when the language server attachs to the buffer
 	on_attach = on_attach,
@@ -158,7 +181,6 @@ end
 		},
 	},
 }) ]]
-
 --[[ nvim_lsp.sumneko_lua.setup({
 	on_attach = on_attach,
 	settings = {
@@ -175,9 +197,7 @@ end
 		},
 	},
 }) ]]
-
 --[[ nvim_lsp.tailwindcss.setup {} ]]
-
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 	underline = true,
 	update_in_insert = false,

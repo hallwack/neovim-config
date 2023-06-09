@@ -47,11 +47,10 @@ vim.cmd [[colorscheme mellow]]
 	background = { -- :h background
 		dark = "mocha",
 	},
-	compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
 	transparent_background = false,
-	term_colors = false,
+	term_colors = true,
 	dim_inactive = {
-		enabled = true,
+		enabled = false,
 		shade = "dark",
 		percentage = 0.15,
 	},
@@ -78,9 +77,9 @@ vim.cmd [[colorscheme mellow]]
 		treesitter = true,
 		-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
 	},
-}) ]]
+})
 
---vim.cmd("colorscheme catppuccin")
+vim.cmd("colorscheme catppuccin") ]]
 
 --[[ require("onedark").setup({
 	style = "warmer",
